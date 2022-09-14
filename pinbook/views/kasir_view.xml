@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- pinbook.kasir tree view -->
+    <record id="pinbook_kasir_view_tree" model="ir.ui.view">
+        <field name="name">pinbook.kasir.view.tree</field>
+        <field name="model">pinbook.kasir</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_kasir"  />
+                <field name="name"      />
+                <field name="alamat"    />
+                <field name="tgl_lahir" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- pinbook.kasir form view -->
+    <record id="pinbook_kasir_view_form" model="ir.ui.view">
+        <field name="name">pinbook.kasir.view.form</field>
+        <field name="model">pinbook.kasir</field>
+        <field name="arch" type="xml">
+            <form string="Nama">
+                <sheet>
+                    <group name="nama" string="Nama">
+                        <!-- Add your field here -->
+                        <field name="id_kasir" />
+                    </group>
+                    <group name="data" string="Data">
+                        <field name="name"      />
+                        <field name="alamat"    />
+                        <field name="tgl_lahir" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+
+     <!-- fatrimart.kasir action window -->
+    <record id="pinbook_kasir_action" model="ir.actions.act_window">
+        <field name="name">Kasir</field>
+        <field name="type">ir.actions.act_window</field>    
+        <field name="res_model">pinbook.kasir</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="pinbook_kasir_menu_act"
+        name="Kasir"
+        parent="pinbook_kasir_menu_categ"
+        action="pinbook_kasir_action"
+        sequence="10"/>
+
+</odoo>

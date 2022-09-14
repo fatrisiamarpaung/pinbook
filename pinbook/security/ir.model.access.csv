@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pinbook_kategoribuku,access.pinbook.kategoribuku,model_pinbook_kategoribuku,,1,1,1,1
+access_pinbook_buku,access.pinbook.buku,model_pinbook_buku,,1,1,1,1
+access_pinbook_kasir,access.pinbook.kasir,model_pinbook_kasir,,1,1,1,1
+access_pinbook_supplier,access.pinbook.supplier,model_pinbook_supplier,,1,1,1,1
+access_pinbook_penjualan,access.pinbook.penjualan,model_pinbook_penjualan,,1,1,1,1
+access_pinbook_detailpenjualan,access.pinbook.detailpenjualan,model_pinbook_detailpenjualan,,1,1,1,1
+access_pinbook_barangdatang,access.pinbook.barangdatang,model_pinbook_barangdatang,,1,1,1,1

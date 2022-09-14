@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_penjualan_xlsx" model="ir.actions.report">
+    <field name="name">Penjualan Excel</field>
+    <field name="model">pinbook.penjualan</field>
+    <field name="report_type">xlsx</field>
+    <field name="report_name">pinbook.report_penjualan_xlsx</field>
+    <field name="report_file">pinbook.report_penjualan_xlsx</field>
+    <field name="binding_model_id" ref="model_pinbook_penjualan"/>
+    <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_faktur_pdf" model="ir.actions.report">
+    <field name="name">Print Faktur</field>
+    <field name="model">pinbook.penjualan</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">pinbook.report_faktur_pdf</field>
+    <field name="report_file">pinbook.report_faktur_pdf</field>
+    <field name="binding_model_id" ref="model_pinbook_penjualan"/>
+    <field name="binding_type">report</field>
+</record>
+
+</odoo>

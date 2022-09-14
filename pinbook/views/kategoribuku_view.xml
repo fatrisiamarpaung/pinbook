@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- pinbook.kategoribuku tree view -->
+    <record id="pinbook_kategoribuku_view_tree" model="ir.ui.view">
+        <field name="name">pinbook.kategoribuku.view.tree</field>
+        <field name="model">pinbook.kategoribuku</field>
+        <field name="arch" type="xml">
+
+            <tree>
+                <field name="name"/>
+                <field name="kode_kategori"/>
+                <field name="kode_rak"     />
+                <field name="jml_item"     />
+                <field name="daftar"       />
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- pinbook.kategoribuku form view -->
+    <record id="pinbook_kategoribuku" model="ir.ui.view">
+        <field name="name">pinbook.kategoribuku.view.form</field>
+        <field name="model">pinbook.kategoribuku</field>
+        <field name="arch" type="xml">
+            <form string="Kategori Buku">
+                <sheet>
+
+                    <group name="Kelompok" string="Posisi Kelompok">
+                        <field name="name"         />
+                        <field name="kode_kategori"/>
+                        <field name="jml_item"     />
+                    </group>
+
+                    <group name="Rak" string="Posisi Barang">
+                        <field name="kode_rak" />
+                        <field name="buku_ids" />
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- fatrimart.kelompokbarang action window -->
+    <record id="pinbook_kategoribuku_action" model="ir.actions.act_window">
+        <field name="name">Kategori Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pinbook.kategoribuku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="pinbook_kategoribuku_menu_act"
+        name="Kategori Buku"
+        parent="pinbook_buku_menu_categ"
+        action="pinbook_kategoribuku_action"
+        sequence="10"/>
+
+</odoo> 

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- pinbook.buku tree view -->
+    <record id="pinbook_buku_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Buku</field>
+        <field name="model">pinbook.buku</field>
+        <field name="arch" type="xml">
+
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"            />
+                <field name="harga_beli"      />
+                <field name="harga_jual"      />
+                <field name="stok"            />
+                <field name="kategoribuku_id" />
+                <field name="supplier_id"     />
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- pinbook.buku form view -->
+    <record id="pinbook_buku_view_form" model="ir.ui.view">
+        <field name="name">Form Buku</field>
+        <field name="model">pinbook.buku</field>
+        <field name="arch" type="xml">
+            <form string="Buku">
+                <sheet>
+
+                    <group name="Buku" string="Buku">
+                        <field name="name"         />
+                        <field name="harga_beli"   />
+                        <field name="harga_jual"   />
+                        <field name="stok"         />
+                    </group>
+
+                    <group name="Kategori Buku" string="Kategori Buku">
+                        <field name="kategoribuku_id" />
+                    </group>
+
+                    <group name="supplier" string="Supplier">
+                        <field name="supplier_id">
+                        <tree>
+                            <field name="name"                            />
+                            <field name="alamat"                          />
+                            <field name="buku_id" widget="many2many_tags" />
+                        </tree>
+                        </field>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pinbook.buku action window -->
+    <record id="pinbook_buku_action" model="ir.actions.act_window">
+        <field name="name">Daftar Buku          </field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pinbook.buku</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="pinbook_buku_menu_act"
+        name="Daftar Buku"
+        parent="pinbook_buku_menu_categ"
+        action="pinbook_buku_action"
+        sequence="20"/>
+
+</odoo>
